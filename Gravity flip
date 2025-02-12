@@ -1,0 +1,9 @@
+# Read input values
+n = int(input().strip())
+columns = list(map(int, input().split()))
+
+# Sort the columns to simulate gravity effect
+columns.sort()
+
+# Print the sorted column heights
+print(*columns)
