@@ -1,0 +1,11 @@
+# Read the 5x5 matrix
+for i in range(5):
+    row = list(map(int, input().split()))
+    if 1 in row:
+        x, y = i, row.index(1)  # Find the position of '1'
+
+# Compute minimum moves to reach the center (2,2)
+moves = abs(x - 2) + abs(y - 2)
+
+# Print the result
+print(moves)
