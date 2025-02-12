@@ -1,0 +1,11 @@
+# Read input strings and convert to lowercase
+s1 = input().strip().lower()
+s2 = input().strip().lower()
+
+# Compare the two strings
+if s1 < s2:
+    print(-1)
+elif s1 > s2:
+    print(1)
+else:
+    print(0)
