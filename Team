@@ -1,0 +1,17 @@
+# Read number of problems
+n = int(input().strip())
+
+# Initialize counter for solvable problems
+solvable_count = 0
+
+# Process each problem
+for _ in range(n):
+    # Read the three inputs (0 or 1)
+    a, b, c = map(int, input().split())
+    
+    # Check if at least two friends agree (sum >= 2)
+    if a + b + c >= 2:
+        solvable_count += 1
+
+# Print the number of solvable problems
+print(solvable_count)
