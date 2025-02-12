@@ -1,0 +1,14 @@
+# Read input values
+a, b = map(int, input().split())
+
+# Initialize year counter
+years = 0
+
+# Loop until Limak's weight exceeds Bob's weight
+while a <= b:
+    a *= 3
+    b *= 2
+    years += 1
+
+# Print the number of years required
+print(years)
