@@ -1,0 +1,19 @@
+# Read the number of magnets
+n = int(input().strip())
+
+# Read the first magnet
+prev_magnet = input().strip()
+
+# Initialize the count of sticks
+stick_count = 0
+
+# Loop through the remaining magnets
+for _ in range(n - 1):
+    current_magnet = input().strip()
+    # If the current magnet has different orientation from the previous one
+    if current_magnet != prev_magnet:
+        stick_count += 1
+    prev_magnet = current_magnet
+
+# Output the total number of sticks
+print(stick_count + 1)
