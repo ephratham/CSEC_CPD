@@ -1,0 +1,31 @@
+# Read input values
+n = int(input().strip())
+cards = list(map(int, input().split()))
+
+# Initialize scores and indices for both ends of the list
+sereja_score = 0
+dima_score = 0
+left, right = 0, n - 1
+turn = 0  # 0 for Sereja's turn, 1 for Dima's turn
+
+# Loop until all cards are taken
+while left <= right:
+    # Choose the maximum value from either end
+    if cards[left] > cards[right]:
+        chosen_card = cards[left]
+        left += 1
+    else:
+        chosen_card = cards[right]
+        right -= 1
+    
+    # Add the chosen card's value to the appropriate player's score
+    if turn == 0:
+        sereja_score += chosen_card  # Sereja's turn
+    else:
+        dima_score += chosen_card  # Dima's turn
+    
+    # Switch turns
+    turn = 1 - turn
+
+# Print the final scores
+print(sereja_score, dima_score)
