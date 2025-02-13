@@ -1,0 +1,14 @@
+# Read input values
+n = int(input().strip())
+stones = input().strip()
+
+# Initialize the counter for stones to remove
+remove_count = 0
+
+# Loop through the stones and count consecutive stones with the same color
+for i in range(1, n):
+    if stones[i] == stones[i - 1]:
+        remove_count += 1
+
+# Print the result
+print(remove_count)
