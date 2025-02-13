@@ -1,0 +1,17 @@
+# Read the input strings
+s = input().strip()  # Stones sequence
+t = input().strip()  # Instructions
+
+# Start at the first stone (0-based index)
+position = 0
+
+# Process each instruction in t
+for move in t:
+    if move == s[position]:  # If the move matches the current stone
+        position += 1  # Move forward
+    
+    if position == len(s):  # If we reach the last stone, break early
+        break
+
+# Output the final 1-based position
+print(position + 1)
