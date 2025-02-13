@@ -1,0 +1,30 @@
+import sys
+
+def solve():
+    # Read the number of wires
+    n = int(sys.stdin.readline().strip())
+    # Read the number of birds on each wire
+    birds = list(map(int, sys.stdin.readline().split()))
+    
+    # Read the number of shots
+    m = int(sys.stdin.readline().strip())
+
+    for _ in range(m):
+        # Read the shot position (1-based index) and convert it to 0-based
+        x, y = map(int, sys.stdin.readline().split())
+        x -= 1  # Convert to 0-based index
+
+        # Birds fly to the adjacent wires
+        if x > 0:
+            birds[x - 1] += y - 1  # Left wire gets `y-1` birds
+        if x < n - 1:
+            birds[x + 1] += birds[x] - y  # Right wire gets the remaining birds
+
+        # The hit wire loses all birds
+        birds[x] = 0  
+
+    # Print the final number of birds on each wire
+    print("\n".join(map(str, birds)))
+
+# Execute the function
+solve()
