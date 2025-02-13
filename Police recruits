@@ -1,0 +1,22 @@
+# Read the number of recruits
+n = int(input().strip())
+
+# Read the status of the recruits
+recruits = list(map(int, input().split()))
+
+# Initialize counters for available experienced recruits and untrained recruits
+experienced = 0
+untrained = 0
+
+# Loop through the recruits
+for recruit in recruits:
+    if recruit > 0:
+        experienced += recruit  # Increase experienced recruits
+    else:
+        if experienced > 0:
+            experienced -= 1  # Use an experienced recruit to train
+        else:
+            untrained += 1  # No experienced recruits available, count untrained recruits
+
+# Output the total number of untrained recruits
+print(untrained)
