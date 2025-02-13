@@ -1,0 +1,26 @@
+# Read the input string of characters
+word = input().strip()
+
+# Initialize the total number of moves
+total_moves = 0
+
+# Starting position is at 'a'
+current_pos = ord('a')
+
+# Loop through each character in the word
+for char in word:
+    # Get the position of the current character
+    target_pos = ord(char)
+    
+    # Calculate the direct distance and the circular distance
+    direct_distance = abs(current_pos - target_pos)
+    circular_distance = 26 - direct_distance
+    
+    # Add the minimum of the two distances to the total moves
+    total_moves += min(direct_distance, circular_distance)
+    
+    # Update the current position to the current character's position
+    current_pos = target_pos
+
+# Output the total number of moves
+print(total_moves)
